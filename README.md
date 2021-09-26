@@ -1,122 +1,91 @@
-# Cyber4s 3rd Pre-Course Final Project
+# Cyber4s 3rd Pre-Course Final Project - Elay Gelbart
 
-## What we will be building
+Welcome to my Todo website repo, before doing anything read the Readme text to ensure you have the best time.
 
-Welcome to your pre-course final project. You are going to build a task-management application.
+## Technologies i use for Website
+![HTML](./Image4Reademe/html.svg) 
+![CSS](./Image4Reademe/css.svg) 
+![JS](./Image4Reademe/js.svg) 
 
-![Example](./example.png)
+## User Experience
 
-## Instructions
+### Add Task
 
-1. Fork this repo into your account.
-2. Clone the forked repo to your computer.
-3. Run the [setup](#setup) script.
-4. Create a new git branch for your work.
-5. Complete the project [requirements](#requirements).
-6. Push your work to GitHub.
-7. [Submit](#submission) your work.
+User can add Task easily by clicking on the input below the selected task type. 
+User can send from input to task list by:
+1. click on "add Task" button.
+2. press "Enter"
 
-## Setup
+### Edit Task 
+User can edit task by simply Double Click on selected task and then when they Blur the edited task added to task list
 
-Execute `npm run final <your name>` (replace `<your name>` with your name). This command will install all the needed dependencies, and generate an [api-data.txt](#api-integration) file.
+### Remove task
+beside every Task there is a Red X by clicking on him the selected task is removed
 
-## Requirements
+### Finish task
+User can click on Green V to move the task to "done" task list
 
-### Page Structure
+### Move task list by "Alt" + "Number"
+User can click on selected Task and then press Alt+1/2/3 to move the Task List
 
-There should be 3 `section` elements. One for to-do tasks, one for in-progress tasks, and one for done tasks.
+### Drag and Drop task
+User can drag task from one tasklist to other and even rearrange the list by drag and drop by mouse
 
-Each `section` should contain:
+### Search Task
+User can Search Task by typing to the Search input at the top of page.
 
-- [ ] a `ul` element with the appropriate class - `to-do-tasks`/`in-progress-tasks`/`done-tasks`
-- [ ] an `input` element with an appropriate id - `add-to-do-task`/`add-in-progress-task`/`add-done-task`
-- [ ] a `button` element with an appropriate id - `submit-add-to-do`/`submit-add-in-progress`/`submit-add-done`
-- [ ] Each `ul` should contain task elements, which are `li` elements with the `task` class.
+### Info About Page
+User can get info about page and info about who to do all the page Functionality By clicking on info image at side bar and then info is displayed for 5 seconds
 
-In addition the page should contain:
+### Change Theme
+User can Change Theme to Light/Dark by clickng on the Sun Image at sidebar
 
-- [ ] a heading with a `page-title` id
-- [ ] a global input with the `search` id
+### Save and Load API Task!
+User can save and load from API by clickng on the Clouds at sidebar. or click the buttons at the bottom of the page.
 
-### Interaction
+### LocalStorage
+When user reloads page, or even close page and open later, his task will remain like it was before user exit page.
 
-- [ ] When the user clicks on one of the add-task buttons, a new task will be added to the respective list. The task content will be taken from the respective input field.
-- [ ] Trying to submit empty tasks should cause an alert.
-- [ ] Double clicking a task element will enable the user to edit its text. When the task element loses focus (`blur` event) the change will be saved.
-- [ ] Hovering over a task element and pressing `alt + 1-3` will move the task to the appropriate list (`1`: todo, `2`: in-progress, `3`: done).
-- [ ] The search input should filter tasks case-**in**sensitively, so that only tasks that match the search string are displayed. The filter will be reapplied every time the user changes the content of the search input (on **every keystroke**).
+### Mobile compatibility
+User from mobile get their own design, the problem is with Double Click and Drag And Drop.
 
-### Storage
+## Main Functions
+ - [ ] `postTasks()` - the Main function of my site, take Task Object and post him on site into lists.
+ - [ ] `addEventListenerToTasks()` - added to each task li element the click,doubleclick,dragNdrop events.
+ - [ ] `postTasksforquery()` - just like postTasks() but without DragNDrop button and without the Save to localStorage
+ - [ ] `dropTask()` - Take The mockTask and make it real in task Object when user drop.
+ - [ ] `postDataToAPI` - Put my Task Object to API, alert an error if something went wrong
+ - [ ] `showInfo` - make animation to show the info that until click is hidden. after 5s info gone
 
-- [ ] The data of all the tasks should be saved to `localStorage` following any changes made to the data. The data should be saved under a storage key named `tasks`. It should be saved in the following format (use the data saved in the local storage to keep the data on the page after refresh):
 
-```json
-{
-  "todo": [],
-  "in-progress": [],
-  "done": []
-}
-```
+## What i learned while working
 
-- [ ] Even if there are no tasks, there should still be a `tasks` key in the `localStorage`, in the above format (the arrays will just be empty).
+- [x] How to detect what the test exactly want from me.
+- [x] Dive deep(relative) to JS, arrow functions, Array and Objects, and much more. 
+- [x] Http request and errors, because it took me hours to understand how to put correctly i learned more about Http methods.
+- [x] Window Object and eventlistner related to him.
+- [x] SVG, A lot about SVG. from learing about it at all, to adding Animation and starting to change it by myself.
+- [x] Drag And Drop. This was the most open minded mission i work one, in Google there isn't exactly what i needed so i learn about it alot and make my own Drag And Drop.
+- [x] How to implement Theme To site. CSS var!
+- [x] CSS position rules, so many of them
+- [x] Mobile compatibility 
+- [x] Working with API, i try to work with draggable API to do drag And drop. until i succssed to access the API i didn't had enough time to learn the API.
 
-## Bonuses
+## My Extras(things not on tests)
+ - [x] Theme Changer!
+ - [x] X and V buttons to work with Tasks!
+ - [x] Sidebar with animated(!) SVG
+ - [x] Responsive Info for users about the site.
+ - [x] Press "Enter" also adding tasks!
+ - [x] Drag and Drop
+ - [x] Sick Design
 
-- [ ] Implement drag-and-drop sorting of tasks.
-- [ ] Add API integration:
+ ## Things i wanted to add and why didn't
+ - [ ] Drag and Drop API - Time.
+ - [ ] Task label and Task priority - API only get object in certain type, and i wanted the label and priority be in the Task Object.
+ - [ ] Mobile full compatibility - Double Click and Drag and Drop. I dont know how.
+ - [ ] Add Task other way - wanted to Add Task won't be in the task list and only one Task Add input with list chooser, the test won't pass.
+ - [ ] Remove API button elements - test will not pass.
 
-  - [ ] Add save and load buttons that sync the current tasks to the API (see details in the [api-data.txt](#api-integration) file).
-  - [ ] Remove the `.skip` from the two last tests in `main.test.js`.
-  - [ ] While waiting for a response from the API display a loader with the class `loader`.
-  - [ ] If an error occurs show an alert.
-  - [ ] If the data loaded from the API is different from the local data, replace the local data with the API data. Make sure you update both the `localStorage` and the DOM.
-
-- [ ] Add any additional cool features you can think of...
-
-## README
-
-You are expected to change the README of your project to showcase your application. Make it readable and explain what your app does. Put a screenshot and a link to GitHub pages.
-
-## Template
-
-You are provided with a template to write your code in, inside the `solution` folder. You should write your code inside `index.html`, `index.js`, `style.css`. You may create additional files for your convenience, but do not change the names of the existing ones.
-
-## API Integration
-
-Once you complete the [initial setup](#setup) you will see an `api-data.txt` file that was created in the project folder. This file will contain the URLs which you can access the API with, using a unique bin ID that was generated for you.
-
-The API is a simple remote storage that gives you a "bin" where you can store data. It allows you to save a chunk of data, or load it.
-
-## Testing
-
-We have added some automated tests for you to use. They will help you make sure your code covers the requirements.
-
-To run the tests, execute `npm run test`.
-
-## Grading
-
-Your work will be graded based on the following considerations:
-
-- The number of tests you pass
-- Readable and ordered code
-  - Spacing & indentation
-  - Indicative vairable/function names
-  - Comments (where necessary)
-- Proper use of Git
-  - Small, standalone commits
-  - Descriptive commit messages
-  - Working in branches and creating a proper PR
-- Convenient visual design (make your app b-e-a-utiful)
-- Extra features you might have added
-
-## Submission
-
-1. On GitHub, open a pull request from your branch to the main branch.
-2. **Do not merge the pull request!**
-3. Add the user `Cyber4sPopo` as collaborator to your repo.
-4. Deploy your application to GitHub pages.
-5. Submit in Google Classroom:
-   - a link to the pull request
-   - a link to your site on GitHub pages
-   - a 5 minutes min selfie video, where you talk about yourself in a few words (age, location, military background, technological background). Think about this video as a part of your interview.
-   - another 2-5 minute video where you talk about your submission solution, showing how your app works and any special features you added.
+ ## Final Thoughts
+ I worked very hard on this website, half of my time was to understand why a certain function work but the Test is not passing. This Work teach my a lot about programming and about my future. i hope i get in to the "Cyber4S" program and have a Good Time in my Website !  
