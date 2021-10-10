@@ -1,13 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="./index.js" defer></script>
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="shortcut icon" href="./Images/TitleIcon.png">
     <title>Tasks manager</title>
 </head>
+
 <body>
+    <main>
+
+        <div id="sidebar">
+            <ul>
+                <li><img id="infoAboutPage" src="./Images/info.svg"></li>
+                <li>
+                    <p class="infoForUser sidebarinfo">Click To Change Site Theme</p><img id="ThemeChanger"
+                        src="./Images/Moon.svg">
+                </li>
+                <li>
+                    <p class="infoForUser sidebarinfo">Click to upload your task to the cloud</p><img id="APIUploadIMG"
+                        src="./Images/UploadToCloud.svg">
+                </li>
+                <li>
+                    <p class="infoForUser sidebarinfo">Click to download your tasks to the website from cloud</p><img
+                        id="APIDoanloadIMG" src="./Images/DownloadFromCloud.svg">
+                </li>
+            </ul>
+        </div>
+
+        <h2 id="page-title">Tasks manager</h2>
+        <h4>Win the day</h4>
+        <input type="text" id="search" placeholder="search tasks here">
+        <div id="loaderDiv"></div>
+
+        <section id="generalSection">
+            <h3 class="task-headline">Tasks</h3>
+            <ul id="general-task-table" class="to-do-tasks"></ul>
+            <input type="text" id="add-to-do-task" placeholder="add task">
+            <button id="submit-add-to-do" onclick="addTask('todo','add-to-do-task')">Add Task</button>
+        </section>
+
+        <section id="ongoingSection">
+            <h3 class="task-headline">On-Going Task</h3>
+            <ul id="ongoing-task-table" class="in-progress-tasks"></ul>
+            <input type="text" id="add-in-progress-task" placeholder="add task">
+            <button id="submit-add-in-progress" onclick="addTask('in-progress','add-in-progress-task')">Add
+                Task</button>
+        </section>
+
+        <section id="doneSection">
+            <h3 class="task-headline">Finished Tasks</h3>
+            <ul id="finished-task-table" class="done-tasks"></ul>
+            <input type="text" id="add-done-task" placeholder="add task">
+            <button id="submit-add-done" onclick="addTask('done','add-done-task')">Add Task</button>
+            <p class="infoForUser" id="TaskInfo">you can click on task and then press ALT+1/2/3 to Change task type</p>
+        </section>
+
+        <div id="API-ACCESS">
+            <p>transfer data to API <button id="save-btn">Save</button><button id="load-btn">Load</button></p>
+        </div>
+        
+    </main>
 </body>
+
 </html>
